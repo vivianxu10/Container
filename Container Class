@@ -1,0 +1,33 @@
+public class Containers {
+    private int x;
+    public Containers(){
+        this.x = 0;
+    }
+
+
+    public int contains() {
+        return x;
+    }
+
+    public void addAmount(int amount) {
+        x+= amount;
+    }
+
+    public void remove(int amount) {
+        if (x>=0){
+            x-= amount;
+        }
+    }
+
+    public void move(int amount, Containers container) {
+        if(x>=0){
+            remove(amount);
+            container.addAmount(amount);
+        }
+    }
+
+    public String toString() {
+        return this.x + "/100";
+    }
+}
+

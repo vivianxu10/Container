@@ -1,0 +1,71 @@
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class TestContainers {
+
+
+    @Test
+    public void testContainsInTheContainerofpee(){
+        Containers peepee = new Containers();
+        peepee.contains();
+        assertEquals(peepee.contains(), 0);
+    }
+
+    @Test
+    public void testAddAmountToTheContainerOfPee() {
+        Containers peepee = new Containers();
+        peepee.addAmount(50);
+        assertEquals(peepee.contains(), 50);
+
+    }
+    @Test
+    public void testRemoveAmoutnOfLiquadFromTheContainer(){
+        Containers peepee = new Containers();
+        peepee.remove(50);
+
+
+    }
+    @Test
+    public void testmoveingthedesireliquittoanothercontainer(){
+        Containers peepee = new Containers();
+        Containers poopoo = new Containers();
+        peepee.addAmount(25);
+        peepee.move(25, poopoo);
+        assertEquals(peepee.contains(), 0);
+        assertEquals(poopoo.contains(), 25);
+
+
+
+    }
+    @Test
+    public void testmovingtoaddmorethana100unitsofliquet(){
+        Containers peepee = new Containers();
+        Containers poopoo = new Containers();
+        peepee.addAmount(1000);
+        peepee.move(1000, poopoo);
+        assertEquals(poopoo.contains(), 1000);
+
+    }
+    @Test
+    public void testnegnumneger(){
+        Containers peepee = new Containers();
+        Containers poopoo = new Containers();
+        peepee.addAmount(-1000);
+    }
+
+    @Test
+    public void testToString() {
+        Containers peepee = new Containers();
+        peepee.addAmount(70);
+        assertEquals("70/100", peepee.toString());
+    }
+
+    @Test
+    public void testRemoveNegativeAmount() {
+        Containers peepee = new Containers();
+        peepee.addAmount(50);
+        peepee.remove(-20);
+        assertEquals(50, peepee.contains());
+    }
+
+}

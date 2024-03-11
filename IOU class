@@ -1,0 +1,27 @@
+import java.util.HashMap;
+
+public class IOU {
+    HashMap<String, Double> iouMap;
+
+    public IOU() {
+        iouMap = new HashMap<>();
+    }
+
+    public void setSum(String toWhom, double amount) {
+        iouMap.put(toWhom, money);
+
+    }
+
+    public double howMuchDoIOweTo(String toWhom) {
+        Double money = iouMap.get(toWhom);
+        if(money == null) {
+            return 0.0;
+        }
+        return money;
+    }
+
+    public double totalOwed() {
+        Double owed = iouMap.get();
+        return owed;
+    }
+}
